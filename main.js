@@ -1,3 +1,4 @@
+
 // Typing animation 
 class Typewriter{
     constructor(txtElement, words, wait = 3000) {
@@ -255,4 +256,17 @@ function myFunction() {
         clickable: true
       }
     });
-  })()
+
+    // image dropbox
+    function uploadImage(event) {
+        console.log("selectImageClicked", event)
+    }
+//     const input = document.querySelector('input[type="file"]');
+//     input.addEventListener('change', (e) => {
+    
+//       // add all selected files
+//       e.target.files.forEach((file) => {
+//         fd.append(e.target.name, file, file.name);  
+//       });
+    
+  })
