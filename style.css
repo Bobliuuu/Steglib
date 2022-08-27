@@ -120,6 +120,7 @@ body {
   */
   .navbar {
     padding: 0;
+    height: 100px;
     
   }
   
@@ -1156,14 +1157,18 @@ body {
 }
 
 .decrypt-text button {
-  width: 200px;
-  height: 70px;
+  width: 100%;
   border-radius: 50px;
-  background-image: linear-gradient(to right, #EFA48B, #DBD8B3 200%)
+  background-image: linear-gradient(to right, #EFA48B, #DBD8B3 200%);
+  border: black solid 1px
 }
 
-.decrypt-text .row-fluid {
-  margin-top: 100px;
+.decrypt-text button:hover {
+  color: #000000;
+}
+
+.decrypt-text .d-inline-flex {
+  margin-top: 30px;
 }
 
 
@@ -1244,20 +1249,83 @@ body {
   to {opacity: 1}
 }
 
-
+.nav-item{
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 /* Encode Style */
 
 #encode h1{
-  font-size: 65px;
+  font-size: 55px;
+  font-weight: bold;
+}
+#encode h2{
+  font-size: 25px;
   font-weight: bold;
 }
 
-#encode .container{
+#encode button{
+  margin-top: 30px;
+  padding:10px;
+  font-size: 20px;
+  
+}
+#encode .row{
   align-items: center;
   text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+#encode{
+  margin: 7%;
 }
 
 #encode button{
-  
+  border-style:dotted;
+}
+
+
+/* Carousel */
+
+ ol{  
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+
+#team{
+  background-color: #a0c1cc;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#carouselExampleIndicators{
+  background-color: #a0c1cc;
+}
+.carousel-item{
+  background-color: #a0c1cc;
+
+}
+#team h1{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+#team h3{
+  font-size: 25px;
+  font-weight: 600;
+}
+#team p{
+  font-size: 15px;
+}
+#carouselExampleIndicators{
+  margin-top: 30px;
+  margin-bottom:100px;
 }
