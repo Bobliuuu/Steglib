@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_session import Session
 from werkzeug.utils import secure_filename
-from steglib import predict_class, predict_possible, display_dct, display_lsb, lsb_decryption, dct_histogram
+from steglib import predict_class, predict_possible, display_dct, display_lsb, lsb_decryption, dct_histogram, lsb_encryption
 import steglib
 from dotenv import dotenv_values
 import cv2
@@ -34,6 +34,17 @@ OUTPUT_FOLDER = app.config['OUTPUT_FOLDER']
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/encode', methods=['GET', 'POST'])
+def encode():
+    uploaded_file = request.files['file']
+    filename = secure_filename(uploaded_file.filename)
+    if filename != '' and uploaded_file and allowed_file(filename): 
+        new_path = os.path.join(UPLOAD_FOLDER, filename)
+        uploaded_file.save(new_path)
+        session['filename'] = filename
+        encoded = lsb_encryption(filename, "lol") # Take new filename path after saving
+        return render_template('encoded.html', encoded_image = encoded)
 
 @app.route('/decode', methods=['POST'])
 def upload_file():

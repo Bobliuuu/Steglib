@@ -56,56 +56,41 @@
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="static/static/Assets/logo.png" alt="" class="img" height="90">
+        <img src="static/Assets/logo.png" alt="" class="img" height="90">
       </a>
+      <h2 class="title" style="text-align:center; color:white;">THE DECRYPTION PROCESS</h2>
+      <!-- <p style="text-align:center">FAST ENCRYPT AND DECRPYT</p> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url_for('redirect_index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="{{url_for('redirect_about')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="test.html">Test</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#team">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="result.html">Result</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="encode.html">encode</a>
+          <a class="nav-link " href="{{url_for('redirect_test')}}">Test</a>
         </li>
       </ul>
     </div>
   </div>
   </nav><!-- .navbar -->
 
-  <div class="big-container">
-    <h2 class="title" style="text-align: center;">WELCOME TO STEGLIB</h2>
-    <p style="text-align:center">FAST ENCRYPT AND DECRPYT</p>
+  <div class="big-container d-flex flex-column align-items-center justify-content-center">
     <!-- <h2 class="title" style="text-align: center; font-size:20px">ABOUT OUR WORK</h2> -->
-    <div class="row">
-            <img src="static/Assets/diagram.png" width="100%" height="auto">
-            <h4 style="text-align:center">UNDERSTANDING THE PROCESS</h4>
-            <h5 style="text-align:center">Lorem Ipsum is simply dummy text of the 
-                printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-                took a galley of type and scrambled it to make a type specimen book. It has survived not only five 
-                centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was 
-                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</h5>
-    </div>
+    
+    <img src="static/Assets/diag.png" style="width:70%; height:auto; display:flex; justify-content:center;border: 2px solid black;" />
+    
+            <h4 style="text-align:center;margin-top: 50px;font-size:20px">UNDERSTANDING THE PROCESS</h4> 
+    
 </div>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
+  
     <div class="footer-top">
 
       <div class="container">
@@ -124,15 +109,6 @@
             </form>
           </div>
         </div>
-
-        <div class="social-links">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-
       </div>
     </div>
 

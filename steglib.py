@@ -68,8 +68,8 @@ def decode_image(filename, label=None, image_size=(512, 512)):
     else:
         return image, label
 
-def lsb_encryption(filename, delim):
-    img = Image.open(filename)
+def lsb_encryption(filename, message, delim=""):
+    img = Image.open(os.path.join(UPLOAD_FOLDER, filename))
     width, height = img.size
     array = np.array(list(img.getdata()))
     if img.mode == 'RGB':
@@ -82,6 +82,7 @@ def lsb_encryption(filename, delim):
     req_pixels = len(b_message)
     if req_pixels > total_pixels:
         print("ERROR: Need larger file size")
+        return ""
     else:
         index = 0
         for p in range(total_pixels):
@@ -89,12 +90,13 @@ def lsb_encryption(filename, delim):
                 if index < req_pixels:
                     array[p][q] = int(bin(array[p][q])[2:9] + b_message[index], 2)
                     index += 1
-        array=array.reshape(height, width, n)
+        array = array.reshape(height, width, n)
         enc_img = Image.fromarray(array.astype('uint8'), img.mode)
-        enc_img.save(dest)
+        enc_img.save(os.path.join(OUTPUT_FOLDER, filename.split('.')[0] + '_encoded.png'))
         print("Image Encoded Successfully")
+        return os.path.join(OUTPUT_FOLDER, filename.split('.')[0] + '_encoded.png')
 
-def lsb_decryption(filename, delim="stego"):
+def lsb_decryption(filename, delim=None):
     img = Image.open(filename)
     array = np.array(list(img.getdata()))
     if img.mode == 'RGB':
@@ -108,12 +110,16 @@ def lsb_decryption(filename, delim="stego"):
             hidden_bits += (bin(array[p][q])[2:][-1])
     hidden_bits = [hidden_bits[i:i+8] for i in range(0, len(hidden_bits), 8)]
     message = ""
-    for i in range(len(hidden_bits)):
-        if message[len(delim):] == delim:
-            break
-        else:
+    if not delim is None:
+        for i in range(len(hidden_bits)):
+            if message[len(delim):] == delim:
+                break
+            else:
+                message += chr(int(hidden_bits[i], 2))
+    else:
+        for i in range(len(hidden_bits)):
             message += chr(int(hidden_bits[i], 2))
-    if delim in message:
+    if not delim is None and delim in message:
         return message[:len(delim)], True
     return message, False
 
@@ -171,7 +177,7 @@ def predict_possible(filename):
     )
     model = keras.models.load_model('models/best_binary.h5')
     result = model.predict(test_dataset)
-    return result[0][0]
+    return result[0][0] * 100
 
 def predict_class(filename):
     class_names = ['NORMAL', 'JMiPOD_75', 'JMiPOD_90', 'JMiPOD_95', 
