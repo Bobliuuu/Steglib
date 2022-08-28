@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="static/Assets/img/favicon.png" rel="icon">
+  <link href="static/Assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -26,7 +26,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
   <!-- Template Main CSS File -->
-  <link href="style.css" rel="stylesheet">
+  <link href="static/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Vlava - v4.8.0
@@ -35,7 +35,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script src="main.js"></script>
+  <script src="static/main.js"></script>
 
   <script>
     // Load this when the DOM is ready
@@ -56,7 +56,7 @@
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="Assets/logo.png" alt="" class="img" height="90">
+        <img src="static/Assets/logo.png" alt="" class="img" height="90">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,22 +64,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url_for('redirect_index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="{{url_for('redirect_about')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="test.html">Test</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#team">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="result.html">Result</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="encode.html">encode</a>
+          <a class="nav-link " href="{{url_for('redirect_test')}}">Test</a>
         </li>
       </ul>
     </div>
@@ -91,7 +82,7 @@
     <div class="hero-container">
       <span style="font-size: 60px; color:white;" class="txt-type" data-wait= "3000" data-words= '[" WELCOME TO STEGLIB"]'></span>
       <h2>We are team of talented decoders at your service</h2>
-      <a href="about.html" class="btn-get-started scrollto">Learn more</a>
+      <a href="{{url_for('redirect_index_anchorabout')}}" class="btn-get-started scrollto">Learn more</a>
     </div>
    
   </section><!-- End Hero -->
@@ -127,10 +118,10 @@
           </div>
         </div>
 
-        <!-- <img src="assets/queston.jpg" alt="side-img" style="width:300px; height:auto; margin-left:1000px;"> -->
+        <!-- <img src="static/Assets/queston.jpg" alt="side-img" style="width:300px; height:auto; margin-left:1000px;"> -->
 
       </div>
-      <img src="Assets/wave1.png" style="width: 100%; margin-top: 50px">
+      <img src="static/Assets/wave1.png" style="width: 100%; margin-top: 50px">
     </section><!-- End Services Section -->
 
      <!-- ======= Pricing Section ======= -->
@@ -204,7 +195,7 @@
     
   </main><!-- End #main -->
 
-<section id                     = "team" class="team">
+<section id = "team" class="team">
   
   <div class="container">
     
@@ -227,7 +218,7 @@
         <div class              = "container">
           <div class            = "row justify-content-center">
             <div class          = "col-lg-3 col-md-9 col-sm-8 align-self-center">
-              <img src          = "Assets/avni .jpg" alt="First slide" height="200">
+              <img src          = "static/Assets/avni.jpg" alt="First slide" height="200">
            </div>
            <div class           = "col-lg-5 col-md-9 col-sm-8 align-self-center">
             <h3>Avni</h3>
@@ -240,7 +231,7 @@
         <div class              = "container">
           <div class            = "row justify-content-center">
             <div class          = "col-lg-3 col-md-9 col-sm-8 align-self-center">
-              <img src          = "Assets/benny.jpg" alt="First slide" height="200">
+              <img src          = "static/Assets/benny.jpg" alt="First slide" height="200">
            </div>
            <div class           = "col-lg-5 col-md-9 col-sm-8 align-self-center">
             <h3>Benny</h3>
@@ -253,7 +244,7 @@
         <div class              = "container">
           <div class            = "row justify-content-center">
             <div class          = "col-lg-3 col-md-9 col-sm-8 align-self-center">
-              <img src          = "Assets/jacky.jpg" alt="First slide" height="200">
+              <img src          = "static/Assets/jacky.jpg" alt="First slide" height="200">
            </div>
            <div class           = "col-lg-5 col-md-9 col-sm-8 align-self-center">
             <h3>Jacky</h3>
@@ -267,7 +258,7 @@
         <div class              = "container">
           <div class            = "row justify-content-center">
             <div class          = "col-lg-3 col-md-9 col-sm-8 align-self-center">
-              <img src          = "Assets/jerry.png" alt="First slide" height="200">
+              <img src          = "static/Assets/jerry.png" alt="First slide" height="200">
            </div>
            <div class           = "col-lg-5 col-md-9 col-sm-8 align-self-center">
             <h3>Jerry</h3>
@@ -349,14 +340,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/Assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/Assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/Assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/Assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="static/Assets/js/main.js"></script>
 
 </body>
 

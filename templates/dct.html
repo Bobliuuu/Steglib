@@ -5,32 +5,33 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Decrypt</title>
+  <title>Result</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="static/Assets/img/favicon.png" rel="icon">
+  <link href="static/Assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link href="static/Assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/Assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/Assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/Assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/Assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/Assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
   <!-- Template Main CSS File -->
-  <link href="style.css" rel="stylesheet">
+  <link href="static/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Vlava - v4.8.0
@@ -39,7 +40,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script src="main.js"></script>
+  <script src="static/main.js"></script>
 
 
 </head>
@@ -50,7 +51,7 @@
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="Assets/logo.png" alt="" class="img" height="90">
+        <img src="static/Assets/logo.png" alt="" class="img" height="90">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -58,53 +59,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" aria-current="page" href="{{url_for('redirect_index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="{{url_for('redirect_about')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="test.html">Test</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#team">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="result.html">Result</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="encode.html">encode</a>
+          <a class="nav-link active" href="{{url_for('redirect_test')}}">Test</a>
         </li>
       </ul>
     </div>
   </div>
   </nav><!-- .navbar -->
 
-  <!-- ======= Encode / Decode ======= -->
-  <section id="decrypt">
+  <!-- ======= Result ======= -->
+  <section id="result" style="padding-bottom: 0px !important">
     <div class="container">
-        <h1 class="decrypt-banner">Decrypting </h1>
-      <div class="row">
-        <div class="col-md-5 decrypt-image">
-          <h3>Encoded Image:</h3>
-          <img src="assets/trees.jpg" alt="decrypted image" />
-        </div>
-        <div class="col-md-6 decrypt-text" >
-            <h3>Decoded Text:</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid ullam adipisci error at minus delectus aspernatur nesciunt repudiandae praesentium optio doloremque omnis, vel iure magni harum, doloribus, accusantium quis alias. Reiciendis fuga eveniet aliquid tenetur voluptatem adipisci architecto velit quos ipsa sit nemo veritatis maiores, provident placeat rerum, totam asperiores? Nemo sit, dolorem beatae mollitia laboriosam corporis sed distinctio cupiditate quibusdam saepe sunt suscipit cum non ea molestiae explicabo pariatur magni atque facilis incidunt iure magnam rem tenetur quas? Error assumenda, voluptatem odit ducimus, quia itaque expedita saepe natus iste temporibus reprehenderit minima sapiente a, inci d tenetur voluptatem adipisci architecto velit quos ipsa sit nemo veritatis maiores, provident placeat rerum, totam asperiores? Nemo sit, dolorem beatae mollitia laboriosam corporis sed distinctio cupiditate quibusdam saepe sunt suscipit cum non ea molestiae explicabo pariatur magni atque facilis incidunt iure magnam rem tenetur quas? Error assumenda, voluptatem odit ducimus, quia itaque expedita saepe natus iste temporibus reprehenderit minima sapiente a,  dunt veritatis maiores. Atque, dicta!
-            <div class="d-inline-flex">
-                
-                <!-- <div class="col-2"><button id="btn-1" class="btn btn-primary">Continue</button> </div>
-                <div class="col-2"><button id="btn-2" class="btn btn-primary">Back</button></div> -->
-                    <div class="p-2"><button id="btn-1" class="btn btn-primary btn-lg">Back</button></div>
-                    <div class="p-2"><button id="btn-2" class="btn btn-primary btn-lg">Continue</button></div>
-                     
-            </div>
-        </div>
-      </div>
-     
+      <h1>LSB</h1>
+      <img src="{{ dct_image }}"> </img>
+      <img src="{{ graph_image }}"> </img>
+      <p>DCT change detected! Click next to run a DCT scan. </p>
+      <button class="btn btn-primary" onclick="window.location.href='{{url_for('effnet')}}'">Next</button> 
     </div>
+    <img src="static/Assets/wave1.png" style="width: 100%;"/>
+  </section>
 
+  
+  <!-- ======= Feedback ======= -->
+  <section id="feedback">
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 offset-1">
+          <h1>Feedback? Contact us!</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores molestiae harum voluptatum ipsum veniam repellat sit, eaque rerum itaque, repudiandae nam? Molestiae asperiores cum obcaecati consequatur debitis necessitatibus praesentium blanditiis deleniti tenetur atque ipsum, ipsa nulla voluptas dicta! Beatae, vel?</p>
+        </div>
+        <div class="col-md-3">
+          <img src="static/Assets/logo.jpg" alt="logo" />
+        </div>
+        
+      </div>
+    </div>
   </section>
 
   
@@ -117,7 +112,7 @@
         
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <h3>STEGLIB</h3>
+            <h3>Vlava</h3>
             <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
           </div>
         </div>
@@ -158,14 +153,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/Assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/Assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/Assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/Assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="static/Assets/js/main.js"></script>
 
 </body>
 

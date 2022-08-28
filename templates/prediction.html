@@ -5,28 +5,32 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Landing</title>
+  <title>Result</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="static/Assets/img/favicon.png" rel="icon">
+  <link href="static/Assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <!-- Bootstrap  -->
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
+  <!-- Vendor CSS Files -->
+  <link href="static/Assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/Assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/Assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/Assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/Assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/Assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
   <!-- Template Main CSS File -->
-  <link href="style.css" rel="stylesheet">
+  <link href="static/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Vlava - v4.8.0
@@ -35,28 +39,18 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script src="main.js"></script>
+  <script src="static/main.js"></script>
 
-  <script>
-    // Load this when the DOM is ready
-    $(function(){
-      // You used .myCarousel here. 
-      // That's the class selector not the id selector,
-      // which is #myCarousel
-      $('#carousel').carousel();
-    });
-    </script>
+
 </head>
 
 <body>
   
   
-  <!-- ======= Header ======= -->
-  
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="Assets/logo.png" alt="" class="img" height="90">
+        <img src="static/Assets/logo.png" alt="" class="img" height="90">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,45 +58,50 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" aria-current="page" href="{{url_for('redirect_index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="{{url_for('redirect_about')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="test.html">Test</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#team">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="result.html">Result</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="encode.html">encode</a>
+          <a class="nav-link active" href="{{url_for('redirect_test')}}">Test</a>
         </li>
       </ul>
     </div>
   </div>
   </nav><!-- .navbar -->
 
-  <div class="big-container">
-    <h2 class="title" style="text-align: center;">WELCOME TO STEGLIB</h2>
-    <p style="text-align:center">FAST ENCRYPT AND DECRPYT</p>
-    <!-- <h2 class="title" style="text-align: center; font-size:20px">ABOUT OUR WORK</h2> -->
-    <div class="row">
-            <img src="assets/diagram.png" width="100%" height="auto">
-            <h4 style="text-align:center">UNDERSTANDING THE PROCESS</h4>
-            <h5 style="text-align:center">Lorem Ipsum is simply dummy text of the 
-                printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-                took a galley of type and scrambled it to make a type specimen book. It has survived not only five 
-                centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was 
-                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</h5>
+  <!-- ======= Result ======= -->
+  <section id="result" style="padding-bottom: 0px !important">
+    <div class="container">
+      <h1>Result</h1>
+      <p>{{prediction}}<p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis cum assumenda hic vero, accusantium mollitia sed porro voluptates neque eos!</p>
+        
+      <button class="btn btn-primary" onclick="window.location.href='{{url_for('lsb')}}'">Next</button> 
     </div>
-</div>
+    <img src="static/Assets/wave1.png" style="width: 100%;"/>
+  </section>
 
+  
+  <!-- ======= Feedback ======= -->
+  <section id="feedback">
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 offset-1">
+          <h1>Feedback? Contact us!</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores molestiae harum voluptatum ipsum veniam repellat sit, eaque rerum itaque, repudiandae nam? Molestiae asperiores cum obcaecati consequatur debitis necessitatibus praesentium blanditiis deleniti tenetur atque ipsum, ipsa nulla voluptas dicta! Beatae, vel?</p>
+        </div>
+        <div class="col-md-3">
+          <img src="static/Assets/logo.jpg" alt="logo" />
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
@@ -112,7 +111,7 @@
         
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <h3>STEGLIB</h3>
+            <h3>Vlava</h3>
             <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
           </div>
         </div>
@@ -153,14 +152,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/Assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/Assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/Assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/Assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="static/Assets/js/main.js"></script>
 
 </body>
 
