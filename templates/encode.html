@@ -56,22 +56,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" aria-current="page" href="{{url_for('redirect_index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="{{url_for('redirect_about')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="test.html">Test</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#team">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="encode.html">encode</a>
+          <a class="nav-link active" href="{{url_for('redirect_test')}}">Test</a>
         </li>
       </ul>
     </div>
@@ -84,10 +75,16 @@
         <div class="row">
           <div class="col-8">
             <h1>Upload To Encode Your File!</h1>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, rem?</h2>
+            Input Message: <form method="POST" action="/encodemessage"> 
+              <input type="text" name="message" />
+              <p><input type="submit" value="Submit"></p>
+            </form>
+            Input Delimiter: <form method="POST" action="/encodedelimiter"> 
+              <input type="text" name="delimiter" /> 
+              <p><input type="submit" value="Submit"></p>
+            </form>
             <!-- <button type="button" class="btn btn-light">Upload To Encode</button> -->
             <form method="POST" id="uploadimage" type="file" action="/encode" enctype="multipart/form-data" accept="image/*">
-              Input Delimiter: <input type="text" name="delimiter" /> <br> <br>
               <input id='fileid' type='file' name='file' hidden />
               <input id='buttonid' type='button' value='Upload File' />
               <p><img id="output" width="200" /></p>

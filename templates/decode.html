@@ -56,22 +56,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" aria-current="page" href="{{url_for('redirect_index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="{{url_for('redirect_about')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="test.html">Test</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#team">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="encode.html">encode</a>
+          <a class="nav-link active" href="{{url_for('redirect_test')}}">Test</a>
         </li>
       </ul>
     </div>
@@ -84,7 +75,10 @@
         <div class="row">
           <div class="col-8">
             <h1>Upload To Decode Your File!</h1>
-            Delimiter (if known): <input type="text" name="delimiter" /> <br> <br>
+            Delimiter (if known): <form method="POST" action="/decodedelimiter"> 
+              <input type="text" name="delimiter" /> <br> <br> 
+              <p><input type="submit" value="Submit"></p>
+            </form>
             <!-- <button type="button" class="btn btn-light">Upload To Encode</button> -->
             <form method="POST" id="uploadimage" type="file" action="/decode" enctype="multipart/form-data" accept="image/*">
               <input id='fileid' type='file' name='file' hidden />
@@ -107,8 +101,8 @@
         
         <div class="row  justify-content-center">
           <div class="col-lg-6">
-            <h3>Vlava</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+            <h3>STEGLIB</h3>
+            <p>Questions? Contact Us!</p>
           </div>
         </div>
 
@@ -125,7 +119,7 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>Vlava</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>STEGLIB</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

@@ -43,10 +43,15 @@ def encode():
         new_path = os.path.join(UPLOAD_FOLDER, filename)
         uploaded_file.save(new_path)
         session['filename'] = filename
-        encoded = lsb_encryption(filename, "lol") # Take new filename path after saving
-        return render_template('encoded.html', encoded_image = encoded)
+        if session['encode_message'] != None:
+            print(session['encode_message'])
+            if session['encode_delimiter'] != None:
+                encoded = lsb_encryption(filename, session['encode_message'], session['encode_delimiter']) # Take new filename path after saving
+            else:
+                encoded = lsb_encryption(filename, session['encode_message'])
+            return render_template('encoded.html', encoded_image = encoded)
 
-@app.route('/decode', methods=['POST'])
+@app.route('/decode', methods=['GET', 'POST'])
 def upload_file():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
@@ -65,7 +70,13 @@ def upload_file():
 def lsb():
     if not session['filename'] == 'DNE':
         lsb_filename = display_lsb(session['filename'])
-        message, relevant_found = lsb_decryption(os.path.join(UPLOAD_FOLDER, session['filename']))
+        message = ""
+        relevant_found = False
+        #print(session['decode_delimiter'])
+        if session['decode_delimiter'] != None: 
+            message, relevant_found = lsb_decryption(os.path.join(UPLOAD_FOLDER, session['filename']), session['decode_delimiter'])
+        else: 
+            message, relevant_found = lsb_decryption(os.path.join(UPLOAD_FOLDER, session['filename']))
         if relevant_found: 
             found = "Hidden message found with this delimiter!"
         else:
@@ -95,6 +106,24 @@ def effnet():
 @app.route('/final', methods=['GET', 'POST'])
 def final():
     return render_template('final.html')
+
+@app.route('/encodemessage', methods=['GET', 'POST'])
+def encodemessage():
+    delimiter = request.form.get('message')
+    session['encode_message'] = delimiter
+    return render_template('encode.html')
+
+@app.route('/encodedelimiter', methods=['GET', 'POST'])
+def encodedelimiter():
+    delimiter = request.form.get('delimiter')
+    session['encode_delimiter'] = delimiter
+    return render_template('encode.html')
+
+@app.route('/decodedelimiter', methods=['GET', 'POST'])
+def decodedelimiter():
+    delimiter = request.form.get('delimiter')
+    session['decode_delimiter'] = delimiter
+    return render_template('decode.html')
 
 @app.route('/next', methods=['GET', 'POST'])
 def next():
